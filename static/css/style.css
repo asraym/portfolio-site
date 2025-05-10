@@ -23,7 +23,7 @@ section {
 /* Hero section */
 #hero {
     padding: 7rem 0;
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('/static/assets/bg-pattern.png');
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #f0f5ff;
     background-size: cover;
 }
 

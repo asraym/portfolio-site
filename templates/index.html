@@ -25,9 +25,9 @@
             <div class="col-lg-8 mx-auto">
                 <h2 class="text-center mb-4">About Me</h2>
                 <p class="lead">
-                    I am a Computer Science student with a specialization in AI for IoT. My passion lies in developing 
-                    intelligent solutions that leverage the power of data and machine learning. I enjoy working on 
-                    challenging problems and continuously learning new technologies.
+                    I am a B.Tech Computer Science student with a strong interest in software development, data structures, and algorithms. 
+                    Currently, I am exploring full-stack web development and working on an event-hosting platform, LitPals. 
+                    I am eager to solve complex problems, build scalable applications, and continuously learn new technologies.
                 </p>
                 <div class="mt-4 text-center">
                     <a href="#contact" class="btn btn-outline-secondary">Let's Connect</a>
@@ -69,7 +69,21 @@
                     {% for skill in data.skills %}
                     <div class="col-md-4">
                         <div class="skill-item text-center">
+                            {% if skill.name == "Data Structures & Algorithms" %}
+                            <i class="fas fa-sitemap fa-2x mb-2 text-primary"></i>
+                            {% elif skill.name == "Python" %}
+                            <i class="fab fa-python fa-2x mb-2 text-primary"></i>
+                            {% elif skill.name == "C" %}
                             <i class="fas fa-code fa-2x mb-2 text-primary"></i>
+                            {% elif skill.name == "Machine Learning" %}
+                            <i class="fas fa-brain fa-2x mb-2 text-primary"></i>
+                            {% elif skill.name == "OCR (Optical Character Recognition)" %}
+                            <i class="fas fa-file-alt fa-2x mb-2 text-primary"></i>
+                            {% elif skill.name == "Full-stack Web Development" %}
+                            <i class="fas fa-laptop-code fa-2x mb-2 text-primary"></i>
+                            {% else %}
+                            <i class="fas fa-code fa-2x mb-2 text-primary"></i>
+                            {% endif %}
                             <h5>{{ skill.name }}</h5>
                         </div>
                     </div>

@@ -9,7 +9,7 @@ app.secret_key = os.environ.get("SESSION_SECRET")
 portfolio_data = {
     "name": "Ashish Raymajhi",
     "title": "Computer Science Student",
-    "bio": "A passionate learner specializing in AI for IoT with a strong foundation in programming and machine learning.",
+    "bio": "I am a B.Tech Computer Science student with a strong interest in software development, data structures, and algorithms. Currently, I am exploring full-stack web development and working on exciting projects.",
     "education": [
         {
             "degree": "Bachelors of Technology in Computer Science",
