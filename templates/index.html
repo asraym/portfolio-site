@@ -1,0 +1,204 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="hero" class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8 mx-auto text-center">
+                <h1 class="display-3 fw-bold">{{ data.name }}</h1>
+                <h3 class="mb-4">{{ data.title }}</h3>
+                <p class="lead mb-4">{{ data.bio }}</p>
+                <div class="mt-4">
+                    <a href="#contact" class="btn btn-primary me-2">Contact Me</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5 bg-darker">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">About Me</h2>
+                <p class="lead">
+                    I am a Computer Science student with a specialization in AI for IoT. My passion lies in developing 
+                    intelligent solutions that leverage the power of data and machine learning. I enjoy working on 
+                    challenging problems and continuously learning new technologies.
+                </p>
+                <div class="mt-4 text-center">
+                    <a href="#contact" class="btn btn-outline-secondary">Let's Connect</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Education</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                {% for edu in data.education %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ edu.degree }}</h3>
+                        <h4 class="card-subtitle mb-2 text-muted">Specialization: {{ edu.specialization }}</h4>
+                        <p class="card-text mb-1">{{ edu.institution }}</p>
+                        <p class="card-text mb-3"><small class="text-muted">{{ edu.period }}</small></p>
+                        <p class="card-text">{{ edu.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-5 bg-darker">
+    <div class="container">
+        <h2 class="text-center mb-4">Skills</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                {% for skill in data.skills %}
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span>{{ skill.name }}</span>
+                        <span>{{ skill.level }}%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: {{ skill.level }}%" 
+                            aria-valuenow="{{ skill.level }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Projects</h2>
+        <div class="row">
+            {% for project in data.projects %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ project.name }}</h3>
+                        <p class="card-text">{{ project.description }}</p>
+                        <div class="mt-3">
+                            {% for tech in project.technologies %}
+                            <span class="badge bg-secondary me-1">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="py-5 bg-darker">
+    <div class="container">
+        <h2 class="text-center mb-4">Certifications</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                {% for cert in data.certifications %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="cert-icon me-3">
+                                <i class="fas fa-certificate fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4 class="card-title mb-1">{{ cert.name }}</h4>
+                                <p class="card-text mb-1">{{ cert.issuer }}</p>
+                                <p class="card-text"><small class="text-muted">{{ cert.date }}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Languages Section -->
+<section id="languages" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Languages</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="row">
+                    {% for lang in data.languages %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ lang.name }}</h4>
+                                <p class="card-text">{{ lang.level }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-darker">
+    <div class="container">
+        <h2 class="text-center mb-4">Contact Me</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="d-flex justify-content-center social-links">
+                    <a href="mailto:{{ data.contact.email }}" class="mx-3" title="Email">
+                        <img src="{{ url_for('static', filename='assets/email.svg') }}" alt="Email" width="30" height="30">
+                    </a>
+                    <a href="{{ data.contact.github }}" target="_blank" class="mx-3" title="GitHub">
+                        <img src="{{ url_for('static', filename='assets/github.svg') }}" alt="GitHub" width="30" height="30">
+                    </a>
+                    <a href="{{ data.contact.linkedin }}" target="_blank" class="mx-3" title="LinkedIn">
+                        <img src="{{ url_for('static', filename='assets/linkedin.svg') }}" alt="LinkedIn" width="30" height="30">
+                    </a>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block footer_year %}2023{% endblock %}

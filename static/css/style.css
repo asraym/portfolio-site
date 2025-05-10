@@ -1,0 +1,100 @@
+/* Custom styles for the portfolio website */
+
+/* General styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+.bg-darker {
+    background-color: rgba(33, 37, 41, 0.6);
+}
+
+/* Hero section */
+#hero {
+    padding: 7rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--bs-dark);
+}
+
+/* Progress bar customization */
+.progress {
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--bs-dark);
+}
+
+.progress-bar {
+    background-color: var(--bs-primary);
+}
+
+/* Card styling */
+.card {
+    transition: transform 0.3s ease;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Social links */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background-color: var(--bs-dark);
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+    background-color: var(--bs-primary);
+}
+
+/* Form styling */
+.form-control {
+    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--bs-light);
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--bs-primary);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    #hero {
+        padding: 5rem 0;
+    }
+    
+    h1.display-3 {
+        font-size: 2.5rem;
+    }
+    
+    .social-links a {
+        width: 40px;
+        height: 40px;
+    }
+}
