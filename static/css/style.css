@@ -8,6 +8,8 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #343a40;
 }
 
 section {
@@ -15,24 +17,29 @@ section {
 }
 
 .bg-darker {
-    background-color: rgba(33, 37, 41, 0.6);
+    background-color: #f0f2f5;
 }
 
 /* Hero section */
 #hero {
     padding: 7rem 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--bs-dark);
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('/static/assets/bg-pattern.png');
+    background-size: cover;
 }
 
-/* Progress bar customization */
-.progress {
-    height: 10px;
-    border-radius: 5px;
-    background-color: var(--bs-dark);
+/* Skills section customization */
+.skill-item {
+    padding: 12px 20px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
-.progress-bar {
-    background-color: var(--bs-primary);
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Card styling */
@@ -55,32 +62,33 @@ section {
     height: 50px;
     border-radius: 50%;
     transition: all 0.3s ease;
-    background-color: var(--bs-dark);
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
 }
 
 .social-links a:hover {
     transform: scale(1.1);
-    background-color: var(--bs-primary);
+    background-color: #007bff;
+    color: white;
 }
 
 /* Form styling */
 .form-control {
-    border-radius: 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgba(0, 0, 0, 0.2);
-    color: var(--bs-light);
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    background-color: white;
+    color: #212529;
 }
 
 .form-control:focus {
-    box-shadow: none;
-    border-color: var(--bs-primary);
-    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: #86b7fe;
 }
 
 /* Navbar styling */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 /* Media queries for responsive design */

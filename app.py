@@ -57,9 +57,9 @@ portfolio_data = {
         {"name": "Chinese", "level": "HSK 2 level (Elementary)"}
     ],
     "contact": {
-        "email": "ashish.raymajhi@example.com",
-        "github": "https://github.com/ashishraymajhi",
-        "linkedin": "https://linkedin.com/in/ashishraymajhi"
+        "email": "raymajhiashish@gmail.com",
+        "github": "https://github.com/asraym",
+        "linkedin": "https://www.linkedin.com/in/ashish-raymajhi-32xa"
     }
 }
 
